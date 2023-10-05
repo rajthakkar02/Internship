@@ -1,7 +1,7 @@
 package org.example.sorting;
 
 public class BubbleSort {
-    public static void main(String[] args) {
+    public static void bubbleSort() {
         int[] arr = {7, 8, 1, 3, 2};
 
         // Bubble Sort
@@ -23,5 +23,6 @@ public class BubbleSort {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.println();
     }
 }

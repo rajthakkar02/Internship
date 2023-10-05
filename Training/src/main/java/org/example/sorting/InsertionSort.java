@@ -1,7 +1,7 @@
 package org.example.sorting;
 
 public class InsertionSort {
-    public static void main(String[] args) {
+    public static void insertionSort() {
         int[] arr = {7,8,3,2,5};
 
         for (int i=1 ; i< arr.length ; i++){
@@ -23,5 +23,6 @@ public class InsertionSort {
         for (int i : arr){
             System.out.print(i + " ");
         }
+        System.out.println();
     }
 }
