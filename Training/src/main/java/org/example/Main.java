@@ -14,8 +14,17 @@ public class Main {
 
         QuickSort.quickSort(arr,0,n-1);
 
-        for (int i=0 ; i< arr.length; i++){
+        printArr(arr);
+
+        MergeSort.divide(arr,0,n-1);
+
+        printArr(arr);
+    }
+
+    private static void printArr(int[] arr) {
+        for (int i = 0; i< arr.length; i++){
             System.out.print(arr[i] + " ");
         }
+        System.out.println();
     }
 }
