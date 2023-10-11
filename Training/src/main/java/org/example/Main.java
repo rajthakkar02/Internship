@@ -16,9 +16,12 @@ public class Main {
 
         printArr(arr);
 
-        MergeSort.divide(arr,0,n-1);
+        int[] arr1 = {6,11,2,8,5,9,7};
+        n = arr1.length;
 
-        printArr(arr);
+        MergeSort.divide(arr1,0,n-1);
+
+        printArr(arr1);
     }
 
     private static void printArr(int[] arr) {
