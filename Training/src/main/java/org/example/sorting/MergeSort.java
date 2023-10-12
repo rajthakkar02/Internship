@@ -6,7 +6,7 @@ public class MergeSort {
             return;
         }
 
-         int mid = (startIndex + endIndex) / 2;
+         int mid = startIndex + (endIndex - startIndex) / 2;
 
          divide(arr,startIndex,mid);
          divide(arr,mid+1,endIndex);
