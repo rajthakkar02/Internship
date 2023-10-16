@@ -2,6 +2,10 @@ package org.example;
 
 import org.example.sorting.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
         BubbleSort.bubbleSort();
@@ -26,20 +30,57 @@ public class Main {
 
         //Linear Search
 
-        int[] arr2 = {10,20,30,40,50,60};
-        int key = 40;
+//        int[] arr2 = {10,20,30,40,50,60};
+//        int key = 40;
+//
+//        int result = LinearSearch.search(arr2,key);
+//
+//        if (result == -1){
+//            System.out.println("Key Not founded");
+//        }else {
+//            System.out.println("Key Found "+result);
+//        }
+//
+//        //Binary Search
+//        n = arr2.length;
+//        System.out.println("Key Found at index " +BinarySearch.binarySearch(arr2,0,n-1,40));
 
-        int result = LinearSearch.search(arr2,key);
+        //linear Search
 
-        if (result == -1){
-            System.out.println("Key Not founded");
-        }else {
-            System.out.println("Key Found "+result);
+        ArrayList<Integer> list = new ArrayList<>();
+        Random random = new Random();
+
+        for (int i=0 ; i<10000 ; i++){
+            list.add(random.nextInt());
         }
+        Collections.sort(list);
 
-        //Binary Search
-        n = arr2.length;
-        System.out.println("Key Found at index " +BinarySearch.binarySearch(arr2,0,n-1,40));
+        long linearSearchTime = 0;
+        for (int i=0 ; i < 100 ; i++){
+            int target = random.nextInt();
+            long startTime = System.nanoTime();
+            int index = LinearSearch.search(list,target);
+            long endTime = System.nanoTime();
+            linearSearchTime += endTime - startTime;
+        }
+        linearSearchTime /= 100;
+
+
+        int sizeOfList = list.size();
+        long binarySearchTime = 0;
+        for (int i=0 ; i < 100 ; i++){
+            int target = random.nextInt();
+            long startTime = System.nanoTime();
+            int index = BinarySearch.binarySearch(list,0,sizeOfList-1,target);
+            long endTime = System.nanoTime();
+            binarySearchTime += endTime - startTime;
+        }
+        binarySearchTime /= 100;
+
+        System.out.println("Linear Search Time " +linearSearchTime+ " nanosecond");
+        System.out.println("Binary Search Time " +binarySearchTime+ " nanosecond");
+
+
     }
 
     private static void printArr(int[] arr) {

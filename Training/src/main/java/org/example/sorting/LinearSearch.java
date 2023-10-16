@@ -1,9 +1,11 @@
 package org.example.sorting;
 
+import java.util.ArrayList;
+
 public class LinearSearch {
-    public static int search(int[] arr,int key){
-        for (int i=0 ; i< arr.length ; i++){
-            if (arr[i] == key){
+    public static int search(ArrayList<Integer> list, int key){
+        for (int i=0 ; i < list.size() ; i++){
+            if (list.get(i) == key){
                 return i;
             }
         }
