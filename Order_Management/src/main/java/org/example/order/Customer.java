@@ -60,8 +60,5 @@ public class Customer {
 
         }
         return map1;
-
-
-
     }
 }

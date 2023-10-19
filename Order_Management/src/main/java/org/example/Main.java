@@ -2,9 +2,8 @@ package org.example;
 
 import org.example.order.Customer;
 import org.example.order.Retailer;
+import org.example.order.UpdateRetail;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
@@ -19,6 +18,8 @@ public class Main {
         }
 
         Map<String,Integer> map1 = Customer.customer(map);
+
+        UpdateRetail.updateRetail(map1);
 
     }
 
