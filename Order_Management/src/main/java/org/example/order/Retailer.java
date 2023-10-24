@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Retailer {
-    public static Map<String, Integer> retailer() throws IOException {
+    public static void retailer() throws IOException {
         File myfile = new File("src/assets/RetailerOrder.txt");
 
         try {
@@ -22,6 +22,7 @@ public class Retailer {
         FileWriter fileWriter = new FileWriter("src/assets/RetailerOrder.txt");
 
         Map<String,Integer> map = new HashMap<>();
+        Map<String,Integer> map1 = new HashMap<>();
 
 
         while (true){
@@ -41,6 +42,7 @@ public class Retailer {
                 int totalPrice = quantity * singlePrice;
 
                 map.put(items,singlePrice);
+                map1.put(items,quantity);
 
                 fileWriter.write(items + "\t");
                 fileWriter.write(quantity+ "\t");
@@ -53,6 +55,6 @@ public class Retailer {
                 break;
             }
         }
-        return map;
+        Customer.customer(map,map1);
     }
 }
