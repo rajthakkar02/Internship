@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.util.*;
 
 public class Test {
-    public static void examTest(String s) throws IOException {
+    public static void examTest(String s,String subject) throws IOException {
 
         File answer = new File("src/check/answer.txt");
 
@@ -52,6 +52,8 @@ public class Test {
             System.out.println("Error Occurred" +e);
         }
 
+
+        Marks.checkAnswer(subject);
 
 
     }

@@ -25,11 +25,11 @@ public class Option {
 
         switch (examNumber){
             case 0 :
-                Test.examTest("src/assets/Math");
+                Test.examTest("src/assets/Math","Math");
                 break;
 
             case 1 :
-                Test.examTest("src/assets/Science");
+                Test.examTest("src/assets/Science","Science");
                 break;
 
             default :
