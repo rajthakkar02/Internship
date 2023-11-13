@@ -1,9 +1,7 @@
 package org.example.exam;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Option {
