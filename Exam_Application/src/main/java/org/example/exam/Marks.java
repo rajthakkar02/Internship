@@ -15,7 +15,6 @@ public class Marks {
             scienceMarks();
         }
 
-
     }
 
     public static void mathMarks() throws IOException {
@@ -24,8 +23,6 @@ public class Marks {
         List<String> correctAnswer = Files.readAllLines(Path.of("src/check/correctAnswerMath"));
 
         List<String> userAnswer = Files.readAllLines(Path.of("src/check/answer.txt"));
-
-
 
         int marks = 0;
 
@@ -47,8 +44,6 @@ public class Marks {
         List<String> correctAnswer = Files.readAllLines(Path.of("src/check/correctAnswerScience"));
 
         List<String> userAnswer = Files.readAllLines(Path.of("src/check/answer.txt"));
-
-
 
         int marks = 0;
 

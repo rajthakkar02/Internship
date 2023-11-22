@@ -15,11 +15,9 @@ public class Test {
 
         try (FileWriter fileWriter = new FileWriter("src/check/answer.txt")) {
 
-
             List<String> lines = Files.readAllLines(Path.of(s));
 
             ArrayList<String> list = new ArrayList<>();
-
 
             for (String line : lines) {
                 if (line.trim().isEmpty())
@@ -78,6 +76,5 @@ public class Test {
         }
 
     }
-
 
 }
