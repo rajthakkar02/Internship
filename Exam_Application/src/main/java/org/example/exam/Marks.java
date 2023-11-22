@@ -38,12 +38,13 @@ public class Marks {
             }
         }
 
-        System.out.println("Total Marks :" +marks);
+        System.out.println("Total Marks : " +marks);
+        System.exit(0);
 
     }
     public static void scienceMarks() throws IOException {
 
-        List<String> correctAnswer = Files.readAllLines(Path.of("src/check/correctAnswerMath"));
+        List<String> correctAnswer = Files.readAllLines(Path.of("src/check/correctAnswerScience"));
 
         List<String> userAnswer = Files.readAllLines(Path.of("src/check/answer.txt"));
 
@@ -60,7 +61,8 @@ public class Marks {
             }
         }
 
-        System.out.println("Total Marks :" +marks);
+        System.out.println("Total Marks : " +marks);
+        System.exit(0);
 
     }
 }

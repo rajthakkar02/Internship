@@ -29,6 +29,26 @@ public class Test {
                 }
             }
 
+            long timeLimit = 300000;
+
+            Timer timer = new Timer();
+
+            TimerTask task = new TimerTask() {
+                @Override
+                public void run() {
+                    System.out.println("Time's up! The exam is over.");
+                    try {
+                        fileWriter.close();
+                        Marks.checkAnswer(subject);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    timer.cancel();
+                }
+            };
+
+            timer.schedule(task,timeLimit);
+
             for (int i = 0; i < list.size(); i = i + 5) {
                 for (int j = i; j <= i + 4; j++) {
                     System.out.println(list.get(j));
@@ -48,13 +68,14 @@ public class Test {
                     continue;
                 }
             }
+
+            System.out.println("The Exam is now complete.");
+            fileWriter.close();
+            Marks.checkAnswer(subject);
+            timer.cancel();
         }catch (Exception e){
             System.out.println("Error Occurred" +e);
         }
-
-
-        Marks.checkAnswer(subject);
-
 
     }
 
